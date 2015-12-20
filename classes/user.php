@@ -1,12 +1,39 @@
 <?php
 
-
-class User
+include('password.php');
+class User extends Password
 {
 
 
-	private $db;
+	private $_db;
 
+
+	public function __construct($db)
+	{
+		//parent::__construct();
+		$this->_db = $db;
+	}
+
+	public function getUserHash($username)
+	{
+
+
+
+	}
+
+	public function login($username,$password)
+	{
+
+
+	}
+
+
+
+
+	public function loggout()
+	{
+		session_destroy();
+	}
 
 	public function is_logged_in()
 	{

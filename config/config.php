@@ -22,6 +22,7 @@ catch(PDOException $e)
 
 }
 include('classes/user.php');
+//indclude('classes/phpmailer/mail.php');
 $user = new User($db);
 
 ?>

@@ -120,26 +120,45 @@ require_once('layout/header.php');
 
 				?>
 				<div class="form-group">
+<<<<<<< HEAD
 					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
 				</div>
 				<div class="form-group">
 					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="email" >
+=======
+					<input type="text" name="username" id="username" class="form-control" placeholder="username" value="<?php if(isset($_POST['username'])) { echo $_POST['username'];};?>">
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" id="email" class="form-control" placeholder="email" value="<?php if(isset($_POST['email'])) { echo $_POST['email'];};?>">
+>>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 				</div>
 				
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="form-group">
+<<<<<<< HEAD
 							<input type="password" name="password" id="password" class="form-control input-lg" placeholder="mot de passe">
+=======
+							<input type="password" name="password" id="password" class="form-control" placeholder="mot de passe">
+>>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 						</div>
 					</div>
 					<div class="col-xs-6">
 						<div class="form-group">
+<<<<<<< HEAD
 							<input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control input-lg" placeholder="Confirmer mot de passe">
+=======
+							<input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" placeholder="Confirmer mot de passe">
+>>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 						</div>
 					</div>
 				</div>
 				<div class="row">
+<<<<<<< HEAD
 					<input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block" value="valider">
+=======
+					<input type="submit" name="submit" id="submit" class="btn btn-primary" value="valider">
+>>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 				</div>
 
 			</form>

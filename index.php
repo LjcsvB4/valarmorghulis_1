@@ -67,7 +67,7 @@ if(isset($_POST['submit']))
 			":active"=>$activation
 			));
 		$idUtilisateur = $db->lastInsertId('idUtilisateur');
-		$mail = new PHPMailer;
+
 $mail->setFrom('SITEEMAIL', 'Mailer');
 $mail->addAddress($_POST['email'], $_POST['username']); 
 

@@ -21,8 +21,34 @@ catch(PDOException $e)
 	echo '<p class="bg-danger">'.$e->getMessage.'</p>';
 
 }
-include('classes/user.php');
-//indclude('classes/phpmailer/mail.php');
+
+date_default_timezone_set('Europe/Paris');
+//load classes as needed
+function __autoload($class) {
+   
+   $class = strtolower($class);
+	//if call from within assets adjust the path
+   $classpath = 'classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	} 	
+	
+	//if call from within admin adjust the path
+   $classpath = '../classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	}
+	
+	//if call from within admin adjust the path
+   $classpath = '../../classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	} 		
+	 
+}
+
+
+
 $user = new User($db);
 
 ?>

@@ -1,0 +1,60 @@
+
+	 			
+		<?php include_once('./FichierPHP.php'); ?>
+<?php entete() ; ?>
+			<div class="navigation">
+
+			<p style="display: inline, background-color: transparant">
+				<b>Acueil</b>
+			</p>
+		
+			<ul class="menu">
+				<li>
+					<a class="boutton" href="#actu_serie"> News Of the Sevens Kingdoms</a>
+				</li>
+				<li>
+					<a class="boutton" href="#actu_site">News du site</a>
+				</li>
+				<li>
+					<a class="boutton" href="">Les photos</a>
+				</li>
+				<li>
+					<a class="boutton" href="./pageVideo.html">La vidéo</a>
+				</li>
+			</ul>	
+		</div>	
+		
+		<h1> Formulaire</h1>
+		<form method="post"action="page-reception.php">
+		<p>
+	<label for="NomMessager">Nom</label>	
+	<input type="text"	name="nom"	id="NomMessager" size="50">
+		</p>
+		<p>
+	<label for="PrenomMessager">Prénom</label>		
+	<input type="text" name="prénom" id="PrenomMessager"size="50"> <br/>
+		</p>
+		<p>
+	<label for="telephone">Téléphone</label>		
+	<input type="text" name="telephone" id="telephone"size="50"> <br/>
+		</p>
+			<p>
+	<label for="Email">Prénom</label>		
+	<input type="email" name="email" id="email"size="50"> <br/>
+		</p>
+		<strong>Une suggestion a nous envoyer</strong>	<br/> <br/>
+		<label for="message">Message</label>		
+	 <input type="text" name="message" id="message"size="50"> <br/>
+		
+		<label for="submit"></label>	<br/>	
+	<input type="submit" value="Envoyer"><br/>
+		
+
+	<?php include_once('./Pieddepage.php'); ?>
+<?php Pieddepage() ; ?>
+
+<?php include_once('./FichierPHP.php'); ?>
+<?php entete(); ?>
+
+	<?php include_once('./Pieddepage.php'); ?>
+<?php Pieddepage() ; ?>

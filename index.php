@@ -67,9 +67,22 @@ if(isset($_POST['submit']))
 			":active"=>$activation
 			));
 		$idUtilisateur = $db->lastInsertId('idUtilisateur');
-		
+		$mail = new PHPMailer;
+$mail->setFrom('SITEEMAIL', 'Mailer');
+$mail->addAddress($_POST['email'], $_POST['username']); 
 
 
+$mail->Subject = 'activer votre compte sur valarmorghulis';
+$mail->Body    = '<p>L\'adresse url pour activer le compte, se trouve ci-dessous : </p>'.
+		 '<p>http://localhost/valarmorghulis_1/activate.php?x='.$activation.'&y='.$idUtilisateur.'</p>';
+
+
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent';
+}
 	}
 
 

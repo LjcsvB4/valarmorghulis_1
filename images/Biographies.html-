@@ -1,0 +1,31 @@
+		<?php include_once('./FichierPHP.php'); ?>
+<?php entete() ; ?>
+		
+		
+		<a href="./BioLannister.html" ><img src="./BlasonLannister.png" alt="Lannister"/></a>
+		
+		<a href="./BioBaratheon.html" ><img src="./BlasonBaratheon.png" alt="Baratheon"/></a>
+		
+		<a href="./BioTyrell.html" ><img src="./Tyrell.png" alt="Tyrell"/></a>
+		
+		<a href="./BioGreyjoy.html" ><img src="./Greyjoy.png" alt="Greyjoy"/></a>
+		
+		<a href="./BioStark.html" ><img src="./Stark.png" alt="Stark"/></a>
+		
+		<a href="./BioArryn.html" ><img src="./Arren.png" alt="Arryn"/></a> <br/> <br/>
+		
+		
+	<p>
+		<a href="./Code_HTML.html">Retour au Menu</a><br/>
+		</p>
+		
+		<p>texte caché par footer<p/>
+		
+					
+	</div>
+		
+		
+		
+	<?php include_once('./Pieddepage.php'); ?>
+<?php Pieddepage() ; ?>
+

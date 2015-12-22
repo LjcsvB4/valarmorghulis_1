@@ -1,0 +1,30 @@
+<?php include_once('./FichierPHP.php'); ?>
+<?php entete(); ?>
+
+<table class="tableau2">
+<caption>Les Photos de la série</caption>
+	<thead>
+	<tr>
+	<th><img src="img_troneDeFer.png" alt="Le Trône de fer" /></th>	
+	<th><img src="file:///media/TOSHIBA/imagesdesBlasons.png" alt="Les maisons" /></th>
+	<th><img src="file:///media/TOSHIBA/img%20le%20trone.png" alt="le trône de fer" /></th>
+	<th><img src="file:///media/TOSHIBA/img-carte.png" alt="Le monde de la série" />	</th>	
+	</tr>
+	</thead>
+	<tbody>
+	<td><img src="Jon.pnj.png" alt="Jon" /></td>
+	<td><img src="Sansa.png" alt="Sansa" /></td>
+	<td><img src="Jaime.png" alt="Jaime" /></td>
+	</tbody>
+	</table>			
+
+
+	 			
+		<?php include_once('./Pieddepage.php'); ?>
+<?php Pieddepage() ; ?>		
+		
+		<?php include_once('./FichierPHP.php'); ?>
+<?php entete(); ?>
+	 			
+		<?php include_once('./Pieddepage.php'); ?>
+<?php Pieddepage() ; ?>

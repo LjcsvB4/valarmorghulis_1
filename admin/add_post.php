@@ -48,8 +48,38 @@ if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 		if($postCont ==''){
 			$error[] = 'Please enter the content.';
 		}
+
+
+
+
+
+
+
 		if(!isset($error)){
 			try {
+
+
+
+
+
+$nom = $_POST['nom'];
+$dir = '../images/';
+$ext = strtolower( pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION) );
+$file=uniqid().'.'.$ext;
+move_uploaded_file($_FILES['image']['tmp_name'], $dir.$file);
+$photo = $file;
+$result = mysql_query("INSERT INTO testponi VALUES
+(
+ '',
+'".mysql_real_escape_string($nom)."',
+'".mysql_real_escape_string($note)."',
+'".mysql_real_escape_string($photo)."'
+)
+");
+if (!$result) {
+ die('RequÃªte invalide : ' . mysql_error());
+}
+
 				//insert into database
 				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
 				$stmt->execute(array(
@@ -74,7 +104,7 @@ if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 	}
 	?>
 
-	<form action='' method='post'>
+	<form action='' method='post' enctype="multipart/form-data">
 
 		<p><label>Title</label><br />
 		<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
@@ -84,6 +114,10 @@ if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 
 		<p><label>Content</label><br />
 		<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
+		<span><input id="nom" name="nom" type="text" maxlength="255" value="" /><label>Nom</label></span>
+		<label for="image"> Ajouter une photo</label>
+ 		<input type="hidden" name="MAX_FILE_SIZE" value="300000" >
+ 		<input type="file" id="file" name="image">
 
 		<p><input type='submit' name='submit' value='Submit'></p>
 

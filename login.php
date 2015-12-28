@@ -39,7 +39,7 @@ require('layout/header.php');
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
 				<h2>Please Login</h2>
-				<p><a href='./'>Back to home page</a></p>
+				<p><a class="LienFormulaire" href='./'>Back to home page</a></p>
 				<hr>
 
 				<?php
@@ -53,13 +53,13 @@ require('layout/header.php');
 					//check the action
 					switch ($_GET['action']) {
 						case 'active':
-							echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
+							echo "<p class='infoFormulaire'>Your account is now active you may now log in.</p>";
 							break;
 						case 'reset':
-							echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
+							echo "<p class='infoFormulaire'>Please check your inbox for a reset link.</p>";
 							break;
 						case 'resetAccount':
-							echo "<h2 class='bg-success'>Password changed, you may now login.</h2>";
+							echo "<p class='infoFormulaire'>Password changed, you may now login.</p>";
 							break;
 					}
 				}
@@ -76,7 +76,7 @@ require('layout/header.php');
 				
 				<div class="row">
 					<div class="col-xs-9 col-sm-9 col-md-9">
-						 <a href='reset.php'>Forgot your Password?</a>
+						 <a class="LienFormulaire" href='reset.php'>Forgot your Password?</a>
 					</div>
 				</div>
 				

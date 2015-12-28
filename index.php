@@ -84,9 +84,9 @@ if(!$mail->send())
 } 
 else 
 {
-    echo 'Message has been sent';
-echo '<p><a href="http://localhost/valarmorghulis_1/activate.php?x='.$id.'&y='.$activation.'">activation compte</a></p>';
-   // header('Location: index.php?action=joined');
+   /* echo 'Message has been sent';*/
+/*echo '<p><a href="http://localhost/valarmorghulis_1/activate.php?x='.$id.'&y='.$activation.'">activation compte</a></p>';*/
+   header('Location: index.php?action=joined');
     
 }
 	}
@@ -109,7 +109,7 @@ require_once('layout/header.php');
 		<div class="col-xs-12">
 			<form role="form" name="form" method="POST" action="" autocomplete="off">
 				<h2>Veuillez vous inscrire</h2>
-				<p><a href="login.php">Login</a></p>
+				<p><a class="LienFormulaire" href="login.php">Login</a></p>
 				<?php
 				if(isset($error))
 				{
@@ -129,7 +129,7 @@ require_once('layout/header.php');
 				?>
 				<div class="form-group">
 
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
+					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="pseudo">
 				</div>
 				<div class="form-group">
 					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="email" >
@@ -159,9 +159,9 @@ require_once('layout/header.php');
 					</div>
 				</div>
 				<div class="row">
-
-					<input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block" value="valider">
-
+					<div class="col-xs-12 center">
+					<input type="submit" name="submit" id="submit" class="btn btn-primary" value="valider">
+					</div>
 
  
 				</div>

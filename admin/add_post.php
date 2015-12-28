@@ -49,12 +49,6 @@ if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 			$error[] = 'Please enter the content.';
 		}
 
-
-
-
-
-
-
 		if(!isset($error)){
 			try {
 
@@ -68,23 +62,24 @@ $ext = strtolower( pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION) );
 $file=uniqid().'.'.$ext;
 move_uploaded_file($_FILES['image']['tmp_name'], $dir.$file);
 $photo = $file;
-$result = mysql_query("INSERT INTO testponi VALUES
+/*$result = mysql_query("INSERT INTO testponi VALUES
 (
  '',
 '".mysql_real_escape_string($nom)."',
 '".mysql_real_escape_string($note)."',
 '".mysql_real_escape_string($photo)."'
 )
-");
-if (!$result) {
+");*/
+/*if (!$result) {
  die('RequÃªte invalide : ' . mysql_error());
-}
+}*/
 
 				//insert into database
-				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
+				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postImage,postCont,postDate) VALUES (:postTitle, :postDesc,:postImage, :postCont, :postDate)') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
 					':postDesc' => $postDesc,
+					':postImage' => $photo,
 					':postCont' => $postCont,
 					':postDate' => date('Y-m-d H:i:s')
 				));

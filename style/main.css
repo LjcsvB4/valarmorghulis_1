@@ -3,6 +3,11 @@
 	width:900px;
 }
 
+.center
+{
+	float:none;
+	margin:auto;
+}
 #login {
 	border: 1px solid #AEAEAE;
 	margin: 100px auto 0;

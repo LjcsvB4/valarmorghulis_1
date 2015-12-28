@@ -72,7 +72,7 @@ require('layout/header.php');
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
 				<h2>Re-initialisation du mot de passe</h2>
-				<p><a href='login.php'>Retour page de login</a></p>
+				<p><a class="LienFormulaire" href='login.php'>Retour page de login</a></p>
 				<hr>
 
 				<?php

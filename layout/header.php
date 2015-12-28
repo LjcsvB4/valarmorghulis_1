@@ -7,3 +7,6 @@
 <link rel="stylesheet" href="style/Style_CSS.css">
 </head>
 <body>
+<header>
+<img style="min-widht: 100%" src="style/images/ValarMorghulis.png" alt="Valar Morghulis">
+</header>

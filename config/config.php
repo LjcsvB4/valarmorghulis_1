@@ -2,17 +2,13 @@
 
 ob_start();
 session_start();
-<<<<<<< HEAD
 $rootDirectory= $_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_1/';
-//echo "root directory = " . $_SERVER['DOCUMENT_ROOT'];
-=======
-$rootDirectory="/var/www/html/valarmorghulis_1/";
->>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 define('DBHOST','localhost');
 define('DBUSERNAME','root');
 define('DBPASSWORD','benjamin');
 define('DBNAME','site_web');
 define('SITEEMAIL','noreply@hotmail.fr');
+define('DIR','http://localhost/valarmorghulis_1/');
 
 
 try 

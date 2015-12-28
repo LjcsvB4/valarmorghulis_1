@@ -205,7 +205,7 @@ DROP TABLE IF EXISTS `utilisateur`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `utilisateur` (
-  `idUtilisateur` int(11) NOT NULL,
+  `idUtilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `pseudoUtilisateur` varchar(50) DEFAULT NULL,
   `ipUtilisateur` varchar(50) DEFAULT NULL,
   `motDePasseUtilisateur` varchar(50) DEFAULT NULL,
@@ -214,13 +214,8 @@ CREATE TABLE `utilisateur` (
   `email` varchar(200) NOT NULL,
   `active` varchar(200) NOT NULL,
   `resetToken` varchar(200) NOT NULL,
-<<<<<<< HEAD
   `resetComplete` varchar(200) NOT NULL,
   PRIMARY KEY (`idUtilisateur`),
-=======
-  `resetComplete` varchar(200) NOT NULL
-  PRIMARY KEY (`idUtilisateur`)
->>>>>>> 2c5680707aac14b9ee80e56b23fe47d289d5bc1b
 CONSTRAINT uc_pseudoUtilisateur UNIQUE(`pseudoUtilisateur`),
 CONSTRAINT uc_email UNIQUE(`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

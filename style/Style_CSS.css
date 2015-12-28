@@ -1,4 +1,4 @@
-<img src="téléchargement.jpg" alt="" />
+
 aside{
 	background-color:transparent;
 	height: inherit;
@@ -27,7 +27,7 @@ a.bouton{
     
 body {
 	background-size:cover;	
-	background-image : url(téléchargement.jpg);
+	/*background-image : url(téléchargement.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: 0% 100%;
@@ -104,7 +104,7 @@ color: #B8860B;
 
 ol.bgimg{
 	height : 300px;
-	background-image : url(ValarMorghulis.png);
+	/*background-image : url(ValarMorghulis.png);*/
 	background-repeat : no-repeat;
 	background-position : 50% 55%;
 	

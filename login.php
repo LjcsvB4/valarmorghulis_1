@@ -2,7 +2,7 @@
 //include config
 require_once('config/config.php');
 //check if already logged in move to home page
-if( $user->is_logged_in() ){ header('Location: index.php'); } 
+if($user->is_logged_in() ){ header('Location: index.php'); } 
 //process login form if submitted
 if(isset($_POST['submit'])){
 	$username = $_POST['username'];
@@ -10,8 +10,16 @@ if(isset($_POST['submit'])){
 	
 	if($user->login($username,$password)){ 
 		$_SESSION['username'] = $username;
-		header('Location: memberpage.php');
-		exit;
+		if($password=="admin" && $username=="admin")
+		{
+			header('Location: admin/index.php');
+		}
+		else
+		{
+
+			header('Location: memberpage.php');
+			exit;
+		}
 	
 	} else {
 		$error[] = 'Wrong username or password or your account has not been activated.';

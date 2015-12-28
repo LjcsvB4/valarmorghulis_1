@@ -1,14 +1,14 @@
 <?php
 //include config
-require_once('../includes/config.php');
+require_once('../config/config.php');
 //if not logged in redirect to login page
-if(!$user->is_logged_in()){ header('Location: login.php'); }
+if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 //show message from add / edit page
 if(isset($_GET['deluser'])){ 
 	//if user id is 1 ignore
 	if($_GET['deluser'] !='1'){
-		$stmt = $db->prepare('DELETE FROM blog_members WHERE memberID = :memberID') ;
-		$stmt->execute(array(':memberID' => $_GET['deluser']));
+		$stmt = $db->prepare('DELETE FROM utilisateur WHERE idUtilisateur = :idUtilisateur') ;
+		$stmt->execute(array(':idUtilisateur' => $_GET['deluser']));
 		header('Location: users.php?action=deleted');
 		exit;
 	}
@@ -52,18 +52,18 @@ if(isset($_GET['deluser'])){
 	</tr>
 	<?php
 		try {
-			$stmt = $db->query('SELECT memberID, username, email FROM blog_members ORDER BY username');
+			$stmt = $db->query('SELECT idUtilisateur, pseudoUtilisateur, email FROM utilisateur ORDER BY pseudoUtilisateur');
 			while($row = $stmt->fetch()){
 				
 				echo '<tr>';
-				echo '<td>'.$row['username'].'</td>';
+				echo '<td>'.$row['pseudoUtilisateur'].'</td>';
 				echo '<td>'.$row['email'].'</td>';
 				?>
 
 				<td>
-					<a href="edit-user.php?id=<?php echo $row['memberID'];?>">Edit</a> 
-					<?php if($row['memberID'] != 1){?>
-						| <a href="javascript:deluser('<?php echo $row['memberID'];?>','<?php echo $row['username'];?>')">Delete</a>
+					<a href="edit_user.php?id=<?php echo $row['idUtilisateur'];?>">Edit</a> 
+					<?php if($row['idUtilisateur'] != 1){?>
+						| <a href="javascript:deluser('<?php echo $row['idUtilisateur'];?>','<?php echo $row['pseudoUtilisateur'];?>')">Delete</a>
 					<?php } ?>
 				</td>
 				
@@ -76,7 +76,7 @@ if(isset($_GET['deluser'])){
 	?>
 	</table>
 
-	<p><a href='add-user.php'>Add User</a></p>
+	<p><a href='add_user.php'>Add User</a></p>
 
 </div>
 

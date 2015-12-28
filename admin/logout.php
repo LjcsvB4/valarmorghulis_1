@@ -2,6 +2,6 @@
 //include config
 require_once('../config/config.php');
 //log user out
-$user->logout();
+$user->loggout();
 header('Location: index.php'); 
 ?>

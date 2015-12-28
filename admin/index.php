@@ -2,7 +2,7 @@
 //include config
 require_once('../config/config.php');
 //if not logged in redirect to login page
-if(!$user->is_logged_in()){ header('Location: login.php'); }
+if(!$user->is_logged_in()){ header('Location: ../login.php'); }
 //show message from add / edit page
 if(isset($_GET['delpost'])){ 
 	$stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID') ;
@@ -58,7 +58,7 @@ if(isset($_GET['delpost'])){
 				?>
 
 				<td>
-					<a href="edit-post.php?id=<?php echo $row['postID'];?>">Edit</a> | 
+					<a href="edit_post.php?id=<?php echo $row['postID'];?>">Edit</a> | 
 					<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Delete</a>
 				</td>
 				
@@ -71,7 +71,7 @@ if(isset($_GET['delpost'])){
 	?>
 	</table>
 
-	<p><a href='add-post.php'>Add Post</a></p>
+	<p><a href='add_post.php'>Add Post</a></p>
 
 </div>
 

@@ -23,7 +23,7 @@ catch(PDOException $e)
 }
 
 
-require_once('classes/class_autoload.php');
+require_once($rootDirectory. 'classes/class_autoload.php');
 Autoload::load();
 
 $user = new User($db);

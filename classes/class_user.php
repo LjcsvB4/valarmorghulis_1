@@ -1,4 +1,5 @@
 <?php
+include('class_password.php');
 class User extends Password
 {
 
@@ -8,22 +9,31 @@ class User extends Password
 
 	public function __construct($db)
 	{
-		//parent::__construct();
+		parent::__construct();
 		$this->_db = $db;
 	}
 
-	public function getUserHash($username)
-	{
-
-
-
+	private function get_user_hash($username){
+		try {
+			$stmt = $this->_db->prepare('SELECT motDePasseUtilisateur, pseudoUtilisateur, idUtilisateur FROM utilisateur WHERE pseudoUtilisateur = :pseudoUtilisateur AND active="Yes" ');
+			$stmt->execute(array('pseudoUtilisateur' => $username));
+			return $stmt->fetch();
+		} catch(PDOException $e) {
+		    echo '<p class="bg-danger">'.$e->getMessage().'</p>';
+		}
 	}
 
-	public function login($username,$password)
-	{
 
-
+	public function login($username,$password){
+		$row = $this->get_user_hash($username);
+		if($this->password_verify($password,$row['motDePasseUtilisateur']) == 1){
+		    $_SESSION['loggedin'] = true;
+		    $_SESSION['username'] = $row['pseudoUtilisateur'];
+		    $_SESSION['memberID'] = $row['idUtilisateur'];
+		    return true;
+		}
 	}
+	
 
 
 
@@ -35,7 +45,7 @@ class User extends Password
 
 	public function is_logged_in()
 	{
-		if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)
+		if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)
 		{
 			return true;
 		}

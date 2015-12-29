@@ -31,15 +31,15 @@ if($row['postID'] == ''){
 				echo '<p>Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
 				echo '<p>'.$row['postCont'].'</p>';				
 			echo '</div>';
-		?>
+	
 
-<!--<a href="commentaires.php?billet=<?php echo $row['postID']; ?>">Commentaires</a>-->
-<?php
+echo '<h2>Commentaires</h2>';
+
 
 
 // Récupération des commentaires
-$req = $bdd->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaires WHERE id_billet = ? ORDER BY date_commentaire LIMIT 3');
-$req->execute(array($_GET['billet']));
+$req = $db->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaire WHERE id_billet = ? ORDER BY date_commentaire LIMIT 3');
+$req->execute(array($_GET['id']));
 
 while ($donnees = $req->fetch())
 {
@@ -51,6 +51,19 @@ while ($donnees = $req->fetch())
 $req->closeCursor();
 ?>
 	</div>
+
+
+<form action="commentaire_post.php" method="post">
+<p>
+<label for="auteur">Auteur</label> : <input type="text" name="auteur" id="auteur" /><br />
+<label for="commentaire">Message</label> : <input type="text" name="commentaire" id="commentaire" /><br />
+<input type="hidden" name="id" id="id" value="<?php echo $_GET['id'];?>">
+<input type="submit" value="Envoyer" />
+</p>
+</form>
+
+
+
 
 </body>
 </html>

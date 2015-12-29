@@ -68,30 +68,28 @@ INSERT INTO `blog_posts` VALUES (1,'Bendless Love','<p>That\'s right, baby</p>',
 /*!40000 ALTER TABLE `blog_posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `commentaire`
---
-
 DROP TABLE IF EXISTS `commentaire`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `commentaire` (
-  `idCommentaire` int(11) NOT NULL,
-  `dateInsertion` datetime DEFAULT NULL,
-  `idActualite` int(11) DEFAULT NULL,
-  `idUtilisateur` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idCommentaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE IF NOT EXISTS `commentaire` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_billet` int(11) NOT NULL,
+  `auteur` varchar(255) NOT NULL,
+  `commentaire` text NOT NULL,
+  `date_commentaire` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `commentaire`
+-- Contenu de la table `commentaires`
 --
 
-LOCK TABLES `commentaire` WRITE;
-/*!40000 ALTER TABLE `commentaire` DISABLE KEYS */;
-/*!40000 ALTER TABLE `commentaire` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `commentaire` (`id`, `id_billet`, `auteur`, `commentaire`, `date_commentaire`) VALUES
+(1, 1, 'M@teo21', 'Un peu court ce billet !', '2010-03-25 16:49:53'),
+(2, 1, 'Maxime', 'Oui, ça commence pas très fort ce blog...', '2010-03-25 16:57:16'),
+(3, 1, 'MultiKiller', '+1 !', '2010-03-25 17:12:52'),
+(4, 2, 'John', 'Preum''s !', '2010-03-27 18:59:49'),
+(5, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu''on ne le pense !', '2010-03-27 22:02:13'),
+(6, 2, 'John', 'Preum''s !', '2010-03-27 18:59:49'),
+(7, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu''on ne le pense !', '2010-03-27 22:02:13');
 
 --
 -- Table structure for table `episode`

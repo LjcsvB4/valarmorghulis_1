@@ -8,7 +8,7 @@
         
     <body>
         <h1>Mon super blog !</h1>
-        <p><a href="viewpost.php">Retour à la liste des billets</a></p>
+        <p><a href="./memberpage.php">Retour à la liste des billets</a></p>
  
 <?php
 // Connexion à la base de données

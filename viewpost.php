@@ -33,8 +33,23 @@ if($row['postID'] == ''){
 			echo '</div>';
 		?>
 
-<a href="commentaires.php?billet=<?php echo $row['postID']; ?>">Commentaires</a>
+<!--<a href="commentaires.php?billet=<?php echo $row['postID']; ?>">Commentaires</a>-->
+<?php
 
+
+// Récupération des commentaires
+$req = $bdd->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaires WHERE id_billet = ? ORDER BY date_commentaire LIMIT 3');
+$req->execute(array($_GET['billet']));
+
+while ($donnees = $req->fetch())
+{
+?>
+<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
+<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+<?php
+} // Fin de la boucle des commentaires
+$req->closeCursor();
+?>
 	</div>
 
 </body>

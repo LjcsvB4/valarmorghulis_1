@@ -33,7 +33,25 @@ if($row['postID'] == ''){
 			echo '</div>';
 		?>
 
+<a href="commentaires.php?billet=<?php echo $row['postID']; ?>">Commentaires</a>
+
 	</div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -68,3 +68,10 @@ INSERT INTO `commentaires` (`id`, `id_billet`, `auteur`, `commentaire`, `date_co
 (3, 1, 'MultiKiller', '+1 !', '2010-03-25 17:12:52'),
 (4, 2, 'John', 'Preum''s !', '2010-03-27 18:59:49'),
 (5, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu''on ne le pense !', '2010-03-27 22:02:13');
+
+INSERT INTO `commentaires` (`id`, `id_billet`, `auteur`, `commentaire`, `date_commentaire`) VALUES
+(6, 2, 'M@teo21', 'Un peu court ce billet !', '2010-03-25 16:49:53'),
+(7, 2, 'Maxime', 'Oui, ça commence pas très fort ce blog...', '2010-03-25 16:57:16'),
+(8, 2, 'MultiKiller', '+1 !', '2010-03-25 17:12:52'),
+(9, 2, 'John', 'Preum''s !', '2010-03-27 18:59:49'),
+(10, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu''on ne le pense !', '2010-03-27 22:02:13');

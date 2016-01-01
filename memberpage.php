@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-
+<a href="logout.php">Logout</a>
 	<div id="wrapper">
 
 		<h1>Blog</h1>

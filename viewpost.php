@@ -19,7 +19,7 @@ if($row['postID'] == ''){
 <body>
 
 	<div id="wrapper">
-
+<a href="logout.php">Logout</a>
 		<h1>Blog</h1>
 		<hr />
 		<p><a href="./memberpage.php">Blog Index</a></p>
@@ -38,7 +38,7 @@ echo '<h2>Commentaires</h2>';
 
 
 // Récupération des commentaires
-$req = $db->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaire WHERE id_billet = ? ORDER BY date_commentaire LIMIT 3');
+$req = $db->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaire WHERE id_billet = ? ORDER BY id DESC LIMIT 3');
 $req->execute(array($_GET['id']));
 
 while ($donnees = $req->fetch())
@@ -55,8 +55,7 @@ $req->closeCursor();
 
 <form action="commentaire_post.php" method="post">
 <p>
-<label for="auteur">Auteur</label> : <input type="text" name="auteur" id="auteur" /><br />
-<label for="commentaire">Message</label> : <input type="text" name="commentaire" id="commentaire" /><br />
+<label for="commentaire">Commentaire</label> : <input type="text" name="commentaire" id="commentaire" /><br />
 <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'];?>">
 <input type="submit" value="Envoyer" />
 </p>

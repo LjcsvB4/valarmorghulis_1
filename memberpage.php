@@ -12,6 +12,7 @@
 	<div id="wrapper">
 
 		<h1>Blog</h1>
+		<a href="biographie/Biographies.php"><h2>Biographie</h2></a>
 		<hr />
 
 		<?php

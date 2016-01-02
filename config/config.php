@@ -5,7 +5,7 @@ session_start();
 $rootDirectory= $_SERVER['DOCUMENT_ROOT'].'/valarmorghulis_1/';
 define('DBHOST','localhost');
 define('DBUSERNAME','root');
-define('DBPASSWORD','benjamin');
+define('DBPASSWORD','Pate63500');
 define('DBNAME','site_web');
 define('SITEEMAIL','noreply@hotmail.fr');
 define('DIR','http://localhost/valarmorghulis_1/');

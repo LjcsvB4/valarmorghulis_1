@@ -15,30 +15,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `actualite`
---
 
-DROP TABLE IF EXISTS `actualite`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `actualite` (
-  `idActualite` int(11) NOT NULL,
-  `titreActualite` varchar(50) DEFAULT NULL,
-  `descriptionActualite` varchar(50) DEFAULT NULL,
-  `dateInsertionActualite` datetime DEFAULT NULL,
-  PRIMARY KEY (`idActualite`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `actualite`
---
-
-LOCK TABLES `actualite` WRITE;
-/*!40000 ALTER TABLE `actualite` DISABLE KEYS */;
-/*!40000 ALTER TABLE `actualite` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `blog_posts`
@@ -91,60 +68,8 @@ INSERT INTO `commentaire` (`id`, `id_billet`, `auteur`, `commentaire`, `date_com
 (6, 2, 'John', 'Preum''s !', '2010-03-27 18:59:49'),
 (7, 2, 'Maxime', 'Excellente analyse de la situation !\r\nIl y arrivera plus tôt qu''on ne le pense !', '2010-03-27 22:02:13');
 
---
--- Table structure for table `episode`
---
 
-DROP TABLE IF EXISTS `episode`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `episode` (
-  `idEpisode` int(11) NOT NULL,
-  `idSaison` int(11) DEFAULT NULL,
-  `numEpisode` int(11) DEFAULT NULL,
-  `nomEpisode` varchar(50) DEFAULT NULL,
-  `dateInsertion` date DEFAULT NULL,
-  PRIMARY KEY (`idEpisode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `episode`
---
-
-LOCK TABLES `episode` WRITE;
-/*!40000 ALTER TABLE `episode` DISABLE KEYS */;
-/*!40000 ALTER TABLE `episode` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `image`
---
-
-DROP TABLE IF EXISTS `image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `image` (
-  `idImage` int(11) NOT NULL,
-  `nomImage` varchar(50) DEFAULT NULL,
-  `urlImage` varchar(50) DEFAULT NULL,
-  `idSerie` int(11) DEFAULT NULL,
-  `idPersonnage` int(11) DEFAULT NULL,
-  `idSaison` int(11) DEFAULT NULL,
-  `idActualite` int(11) DEFAULT NULL,
-  `dateInsertion` date DEFAULT NULL,
-  PRIMARY KEY (`idImage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `image`
---
-
-LOCK TABLES `image` WRITE;
-/*!40000 ALTER TABLE `image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `image` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `personnage`
@@ -158,7 +83,7 @@ CREATE TABLE `personnage` (
   `nomPersonnage` varchar(50) DEFAULT NULL,
   `prenomPersonnage` varchar(50) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
-  `idSerie` int(11) DEFAULT NULL,
+  `biographie` TEXT DEFAULT NULL,
   PRIMARY KEY (`idPersonnage`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -172,56 +97,6 @@ LOCK TABLES `personnage` WRITE;
 /*!40000 ALTER TABLE `personnage` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `saison`
---
-
-DROP TABLE IF EXISTS `saison`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `saison` (
-  `idSaison` int(11) NOT NULL,
-  `idSerie` int(11) DEFAULT NULL,
-  `numSaison` varchar(50) DEFAULT NULL,
-  `nomSaison` varchar(50) DEFAULT NULL,
-  `dateInsertion` date DEFAULT NULL,
-  PRIMARY KEY (`idSaison`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `saison`
---
-
-LOCK TABLES `saison` WRITE;
-/*!40000 ALTER TABLE `saison` DISABLE KEYS */;
-/*!40000 ALTER TABLE `saison` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `serie`
---
-
-DROP TABLE IF EXISTS `serie`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `serie` (
-  `idSerie` int(11) NOT NULL,
-  `idActualite` int(11) NOT NULL,
-  `nomSerie` varchar(50) DEFAULT NULL,
-  `dateInsertion` date DEFAULT NULL,
-  PRIMARY KEY (`idSerie`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `serie`
---
-
-LOCK TABLES `serie` WRITE;
-/*!40000 ALTER TABLE `serie` DISABLE KEYS */;
-/*!40000 ALTER TABLE `serie` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `utilisateur`

@@ -1,7 +1,9 @@
 		<!--<?php include_once('./FichierPHP.php'); ?>-->
 <!--<?php entete() ; ?>-->
-		
-		
+<div>
+		<a href="../memberpage.php">Retour à la page d'accueil</a>
+		<a href="../logout.php">Logout</a>
+	</div>	
 		<a href="./BioLannister.php" ><img src="../images/BlasonLannister.png" alt="Lannister"/></a>
 		
 		<a href="./BioBaratheon.php" ><img src="../images/BlasonBaratheon.png" alt="Baratheon"/></a>

@@ -84,6 +84,7 @@ CREATE TABLE `personnage` (
   `prenomPersonnage` varchar(50) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `biographie` TEXT DEFAULT NULL,
+  `nomImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idPersonnage`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
